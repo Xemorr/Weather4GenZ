@@ -40,5 +40,7 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.controlsfx:controlsfx:11.0.0" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.openjfx:javafx-web:11" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.openjfx:javafx-web:win:11" level="project" />
+    <orderEntry type="library" name="Maven: com.gluonhq:charm-glisten:6.1.0" level="project" />
+    <orderEntry type="library" name="Maven: com.gluonhq.attach:util:4.0.14" level="project" />
   </component>
 </module>
