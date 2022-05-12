@@ -6,9 +6,10 @@ module group.six.weather4genz {
     requires kotlin.stdlib;
     requires kotlin.stdlib.common;
 
-    requires org.kordamp.bootstrapfx.core;
+    requires javafx.media;
     requires annotations;
     requires json.path;
+    requires org.jfxtras.styles.jmetro;
 
     opens group.six.weather4genz to javafx.fxml;
     exports group.six.weather4genz;
