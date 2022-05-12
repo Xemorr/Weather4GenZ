@@ -41,11 +41,12 @@ public class WeatherDataHandler {
                 DocumentContext parse = JsonPath.parse(json);
                 String weatherType = parse.read("$.weather[0].main", String.class);
                 String weatherDescription = parse.read("$.weather[0].description", String.class);
+                String weatherIconName = parse.read("$.weather[0].icon", String.class);
                 double temperature = parse.read("$.main.temp", Double.class);
                 double feelsLikeTemperature = parse.read("$.main.feels_like", Double.class);
                 double windSpeed = parse.read("$.wind.speed", Double.class);
 
-                completableFuture.complete(new Data(weatherType, weatherDescription, temperature, feelsLikeTemperature, windSpeed));
+                completableFuture.complete(new Data(weatherType, weatherDescription, weatherIconName, temperature, feelsLikeTemperature, windSpeed));
             }
         });
         return completableFuture;
@@ -92,5 +93,5 @@ public class WeatherDataHandler {
      * The record that holds the relevant data from the API
      * Temperature and FeelsLike are measured in Celsius, Wind Speed in m/s
      */
-    public static final record Data(String weatherType, String weatherDescription, double temperature, double feelsLikeTemperature, double windSpeed) { }
+    public static final record Data(String weatherType, String weatherDescription, String icon, double temperature, double feelsLikeTemperature, double windSpeed) { }
 }
