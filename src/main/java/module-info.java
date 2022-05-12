@@ -7,6 +7,8 @@ module group.six.weather4genz {
     requires kotlin.stdlib.common;
 
     requires javafx.media;
+    requires com.gluonhq.charm.glisten;
+    requires com.gluonhq.attach.util;
     requires annotations;
     requires json.path;
     requires org.jfxtras.styles.jmetro;
