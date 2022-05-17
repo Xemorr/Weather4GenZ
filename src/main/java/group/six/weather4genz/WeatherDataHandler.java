@@ -127,9 +127,9 @@ public class WeatherDataHandler {
                 String weatherIconName = parse.read("$.weather[0].icon", String.class);
                 double temperature = parse.read("$.main.temp", Double.class);
                 double feelsLikeTemperature = parse.read("$.main.feels_like", Double.class);
-                double windSpeed = parse.read("$.wind.speed", Double.class);
+                double humidity = parse.read("$.main.humidity", Double.class);
 
-                completableFuture.complete(new Data(weatherType, weatherDescription, weatherIconName, temperature, feelsLikeTemperature, windSpeed));
+                completableFuture.complete(new Data(weatherType, weatherDescription, weatherIconName, temperature, feelsLikeTemperature, humidity));
             }
         });
         return completableFuture;
@@ -176,7 +176,11 @@ public class WeatherDataHandler {
      * The record that holds the relevant data from the API
      * Temperature and FeelsLike are measured in Celsius, Wind Speed in m/s
      */
-    public static final record Data(String weatherType, String weatherDescription, String icon, double temperature, double feelsLikeTemperature, double windSpeed) { }
+    public static final record Data(String weatherType, String weatherDescription, String icon, double temperature, double feelsLikeTemperature, double humidity) {
+        public double getTemperatureInLayers() {
+            return Math.max((41 - feelsLikeTemperature) / 13.5, 1);
+        }
+    }
 
     /**
      * The record that holds the various temperatures corresponding to general sections of the day

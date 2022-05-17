@@ -46,7 +46,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group.six.weather4genz.HelloController">
    <top>
       <GridPane BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -63,7 +63,7 @@
                   <Image url="@icons/placeholder.png" />
                </image>
             </ImageView>
-             <ImageView fx:id="search_icon" fitHeight="50.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+             <ImageView fx:id="search_icon" fitHeight="50.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" onMouseClicked="#onSearch">
                  <image>
                      <Image url="@icons/placeholder.png" />
                  </image>
