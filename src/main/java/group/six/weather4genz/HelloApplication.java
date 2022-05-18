@@ -1,6 +1,7 @@
 package group.six.weather4genz;
 
 import com.gluonhq.charm.glisten.control.TextField;
+import com.jayway.jsonpath.PathNotFoundException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -57,6 +58,10 @@ public class HelloApplication extends Application {
         String search = search_input.getText();
         //Handle current weather data
         weatherDataHandler.locationfromCity(search)
+                .exceptionally((throwable) -> {
+                    search_input.setText("City Not Found - defaulted to Cambridge");
+                    return new WeatherDataHandler.Location(52.205276, 0.199167);
+                })
                 .thenAccept((location) -> weatherDataHandler.getCurrentWeatherData(location)
                         .thenAccept((data) -> {
                             try {

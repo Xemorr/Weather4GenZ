@@ -156,18 +156,15 @@ public class WeatherDataHandler {
 
             @Override
             public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
-                String json = response.body().string();
-                DocumentContext parse = JsonPath.parse(json);
-                double latitude;
-                double longitude;
                 try {
-                     latitude = parse.read("$[0].lat", Double.class);
-                     longitude = parse.read("$[0].lon", Double.class);
-                } catch (PathNotFoundException e) {
-                    latitude = 52.205276;
-                    longitude = 0.199167; //latitude and longitude of cambridge as default
+                    String json = response.body().string();
+                    DocumentContext parse = JsonPath.parse(json);
+                    double latitude = parse.read("$[0].lat", Double.class);
+                    double longitude = parse.read("$[0].lon", Double.class);
+                    completableFuture.complete(new Location(latitude, longitude));
+                } catch (Exception e) {
+                    completableFuture.completeExceptionally(e);
                 }
-                completableFuture.complete(new Location(latitude, longitude));
             }
         });
         return completableFuture;
