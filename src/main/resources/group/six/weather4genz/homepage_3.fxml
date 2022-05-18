@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright (c) 2017, Gluon and/or its affiliates.
+    All rights reserved. Use is subject to license terms.
+
+    This file is available and licensed under the following license:
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions
+    are met:
+
+   - Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+   - Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in
+     the documentation and/or other materials provided with the distribution.
+   - Neither the name of Oracle Corporation and Gluon nor the names of its
+     contributors may be used to endorse or promote products derived
+     from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import com.gluonhq.charm.glisten.control.TextField?>
+<?import com.gluonhq.charm.glisten.mvc.View?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600" minWidth="300" prefHeight="600.0" prefWidth="300.0"
+	  xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+
+	<!-- ======================== TOP ======================== -->
+
+	<top>
+
+		<GridPane BorderPane.alignment="CENTER">
+
+			<columnConstraints>
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" prefWidth="50.0"/>
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" prefWidth="30.0"/>
+				<ColumnConstraints hgrow="SOMETIMES"/>
+			</columnConstraints>
+
+			<rowConstraints>
+				<RowConstraints prefHeight="50.0" vgrow="SOMETIMES"/>
+			</rowConstraints>
+
+			<children>
+
+				<!-- === COLUMN 0: Hamburger === -->
+
+				<ImageView fx:id="hamburger_icon" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true"
+						   preserveRatio="true">
+					<image>
+						<Image url="@icons/placeholder.png"/>
+					</image>
+				</ImageView>
+
+				<!-- === COLUMN 1: Search icon === -->
+
+				<ImageView fx:id="search_icon" fitHeight="50.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true"
+						   GridPane.columnIndex="1">
+					<image>
+						<Image url="@icons/placeholder.png"/>
+					</image>
+				</ImageView>
+
+				<!-- === COLUMN 2: Search bar === -->
+
+				<TextField fx:id="search_input" floatText="Location" prefHeight="40.0" GridPane.columnIndex="2"
+						   GridPane.valignment="CENTER">
+					<GridPane.margin>
+						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+					</GridPane.margin>
+				</TextField>
+
+			</children>
+
+		</GridPane>
+
+	</top>
+
+	<!-- ======================== CENTER ======================== -->
+
+	<center>
+
+		<StackPane>
+
+			<children>
+
+				<!-- ============ Main Content Grid ============ -->
+
+				<GridPane>
+
+					<columnConstraints>
+						<ColumnConstraints hgrow="ALWAYS"/>
+					</columnConstraints>
+
+					<rowConstraints>
+						<RowConstraints vgrow="SOMETIMES"/>
+						<RowConstraints maxHeight="30.0" valignment="BOTTOM" vgrow="SOMETIMES"/>
+						<RowConstraints maxHeight="120.0" valignment="BASELINE" vgrow="SOMETIMES"/>
+					</rowConstraints>
+
+					<children>
+
+						<!-- ====== Today Grid ====== -->
+
+						<GridPane>
+
+							<columnConstraints>
+								<ColumnConstraints hgrow="SOMETIMES" percentWidth="40"/>
+								<ColumnConstraints hgrow="SOMETIMES" percentWidth="60"/>
+							</columnConstraints>
+
+							<rowConstraints>
+								<RowConstraints vgrow="SOMETIMES"/>
+							</rowConstraints>
+
+							<children>
+
+								<!-- === Clothes Grid === -->
+
+								<GridPane maxHeight="400" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+
+									<columnConstraints>
+										<ColumnConstraints hgrow="SOMETIMES"/>
+									</columnConstraints>
+
+									<rowConstraints>
+										<RowConstraints percentHeight="30.0" vgrow="SOMETIMES"/>
+										<RowConstraints percentHeight="30.0" vgrow="SOMETIMES"/>
+										<RowConstraints percentHeight="40.0" vgrow="SOMETIMES"/>
+									</rowConstraints>
+
+									<children>
+
+										<ImageView fx:id="clothes_head_icon" fitWidth="80.0" pickOnBounds="true"
+												   preserveRatio="true" GridPane.halignment="CENTER">
+											<image>
+												<Image url="@icons/placeholder.png"/>
+											</image>
+										</ImageView>
+
+										<ImageView fx:id="clothes_body_icon" fitWidth="80.0" pickOnBounds="true"
+												   preserveRatio="true" GridPane.halignment="CENTER"
+												   GridPane.rowIndex="1">
+											<image>
+												<Image url="@icons/placeholder.png"/>
+											</image>
+										</ImageView>
+
+										<ImageView fx:id="clothes_legs_icon" fitWidth="80.0" pickOnBounds="true"
+												   preserveRatio="true" GridPane.halignment="CENTER"
+												   GridPane.rowIndex="2">
+											<image>
+												<Image url="@icons/placeholder.png"/>
+											</image>
+
+										</ImageView>
+
+									</children>
+
+								</GridPane>
+
+								<!-- === Current Weather Grid === -->
+
+								<GridPane maxHeight="400" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+										  GridPane.valignment="CENTER">
+
+									<columnConstraints>
+										<ColumnConstraints hgrow="SOMETIMES"/>
+									</columnConstraints>
+
+									<rowConstraints>
+										<RowConstraints percentHeight="5.0" vgrow="SOMETIMES"/>
+										<RowConstraints percentHeight="12.0" vgrow="SOMETIMES"/>
+										<RowConstraints percentHeight="6.0" vgrow="SOMETIMES"/>
+										<RowConstraints percentHeight="5.0" vgrow="SOMETIMES"/>
+										<RowConstraints percentHeight="11.0" vgrow="SOMETIMES"/>
+										<RowConstraints percentHeight="10.0" vgrow="SOMETIMES"/>
+										<RowConstraints percentHeight="4.0" vgrow="SOMETIMES"/>
+										<RowConstraints percentHeight="47.0" vgrow="SOMETIMES"/>
+									</rowConstraints>
+
+									<children>
+
+										<ImageView fx:id="current_weather_icon" fitWidth="120" pickOnBounds="true"
+												   preserveRatio="true" GridPane.halignment="CENTER"
+												   GridPane.rowIndex="7">
+											<image>
+												<Image url="@icons/placeholder.png"/>
+											</image>
+										</ImageView>
+
+										<Text fx:id="time_text" strokeType="OUTSIDE" strokeWidth="0.0" text="08:52"
+											  GridPane.halignment="CENTER" GridPane.rowIndex="1">
+											<font>
+												<Font size="19.0"/>
+											</font>
+										</Text>
+
+										<Text fx:id="date_text" strokeType="OUTSIDE" strokeWidth="0.0"
+											  text="Monday 7th February" GridPane.halignment="CENTER"
+											  GridPane.rowIndex="2">
+											<font>
+												<Font size="11.0"/>
+											</font>
+										</Text>
+
+										<Text fx:id="current_temp_text" strokeType="OUTSIDE" strokeWidth="0.0"
+											  text="20°C" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+											<font>
+												<Font size="35.0"/>
+											</font>
+										</Text>
+
+										<Text fx:id="current_rain_text" strokeType="OUTSIDE" strokeWidth="0.0"
+											  text="40% Rain" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+											<font>
+												<Font size="20.0"/>
+											</font>
+										</Text>
+
+									</children>
+								</GridPane>
+							</children>
+						</GridPane>
+
+						<!-- ====== Scroll Up Button ====== -->
+
+						<ImageView fx:id="forecast_open_button" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
+								   preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+							<image>
+								<Image url="@icons/placeholder.png"/>
+							</image>
+						</ImageView>
+
+						<!-- ====== Hourly Forecast ====== -->
+
+						<ScrollPane hbarPolicy="NEVER" vbarPolicy="NEVER" vmax="0.0" GridPane.halignment="LEFT"
+									GridPane.rowIndex="2">
+							<content>
+								<AnchorPane>
+									<children>
+										<GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+												  AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+											<columnConstraints>
+												<ColumnConstraints hgrow="SOMETIMES" prefWidth="80.0"/>
+												<ColumnConstraints/>
+												<ColumnConstraints/>
+												<ColumnConstraints/>
+												<ColumnConstraints/>
+												<ColumnConstraints/>
+												<ColumnConstraints/>
+												<ColumnConstraints/>
+												<ColumnConstraints/>
+												<ColumnConstraints/>
+												<ColumnConstraints/>
+												<ColumnConstraints/>
+											</columnConstraints>
+											<rowConstraints>
+												<RowConstraints prefHeight="80.0" vgrow="SOMETIMES"/>
+												<RowConstraints prefHeight="40.0" vgrow="SOMETIMES"/>
+											</rowConstraints>
+											<children>
+												<ImageView fx:id="forecast_0_icon" fitHeight="80.0" fitWidth="80.0"
+														   pickOnBounds="true" preserveRatio="true"
+														   GridPane.columnIndex="0" GridPane.valignment="TOP">
+													<image>
+														<Image url="@icons/placeholder.png"/>
+													</image>
+												</ImageView>
+												<Text fx:id="forecast_0_text" strokeType="OUTSIDE" strokeWidth="0.0"
+													  text="2pm" GridPane.columnIndex="0" GridPane.halignment="CENTER"
+													  GridPane.rowIndex="1" GridPane.valignment="CENTER">
+													<font>
+														<Font size="19.0"/>
+													</font>
+												</Text>
+
+												<ImageView fx:id="forecast_1_icon" fitHeight="80.0" fitWidth="80.0"
+														   pickOnBounds="true" preserveRatio="true"
+														   GridPane.columnIndex="1" GridPane.valignment="TOP">
+													<image>
+														<Image url="@icons/placeholder.png"/>
+													</image>
+												</ImageView>
+												<Text fx:id="forecast_1_text" strokeType="OUTSIDE" strokeWidth="0.0"
+													  text="3pm" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+													  GridPane.rowIndex="1" GridPane.valignment="CENTER">
+													<font>
+														<Font size="19.0"/>
+													</font>
+												</Text>
+
+												<ImageView fx:id="forecast_2_icon" fitHeight="80.0" fitWidth="80.0"
+														   pickOnBounds="true" preserveRatio="true"
+														   GridPane.columnIndex="2" GridPane.valignment="TOP">
+													<image>
+														<Image url="@icons/placeholder.png"/>
+													</image>
+												</ImageView>
+												<Text fx:id="forecast_2_text" strokeType="OUTSIDE" strokeWidth="0.0"
+													  text="4pm" GridPane.columnIndex="2" GridPane.halignment="CENTER"
+													  GridPane.rowIndex="1" GridPane.valignment="CENTER">
+													<font>
+														<Font size="19.0"/>
+													</font>
+												</Text>
+
+												<ImageView fx:id="forecast_3_icon" fitHeight="80.0" fitWidth="80.0"
+														   pickOnBounds="true" preserveRatio="true"
+														   GridPane.columnIndex="3" GridPane.valignment="TOP">
+													<image>
+														<Image url="@icons/placeholder.png"/>
+													</image>
+												</ImageView>
+												<Text fx:id="forecast_3_text" strokeType="OUTSIDE" strokeWidth="0.0"
+													  text="5pm" GridPane.columnIndex="3" GridPane.halignment="CENTER"
+													  GridPane.rowIndex="1" GridPane.valignment="CENTER">
+													<font>
+														<Font size="19.0"/>
+													</font>
+												</Text>
+
+												<ImageView fx:id="forecast_4_icon" fitHeight="80.0" fitWidth="80.0"
+														   pickOnBounds="true" preserveRatio="true"
+														   GridPane.columnIndex="4" GridPane.valignment="TOP">
+													<image>
+														<Image url="@icons/placeholder.png"/>
+													</image>
+												</ImageView>
+												<Text fx:id="forecast_4_text" strokeType="OUTSIDE" strokeWidth="0.0"
+													  text="6pm" GridPane.columnIndex="4" GridPane.halignment="CENTER"
+													  GridPane.rowIndex="1" GridPane.valignment="CENTER">
+													<font>
+														<Font size="19.0"/>
+													</font>
+												</Text>
+
+												<ImageView fx:id="forecast_5_icon" fitHeight="80.0" fitWidth="80.0"
+														   pickOnBounds="true" preserveRatio="true"
+														   GridPane.columnIndex="5" GridPane.valignment="TOP">
+													<image>
+														<Image url="@icons/placeholder.png"/>
+													</image>
+												</ImageView>
+												<Text fx:id="forecast_5_text" strokeType="OUTSIDE" strokeWidth="0.0"
+													  text="7pm" GridPane.columnIndex="5" GridPane.halignment="CENTER"
+													  GridPane.rowIndex="1" GridPane.valignment="CENTER">
+													<font>
+														<Font size="19.0"/>
+													</font>
+												</Text>
+
+												<ImageView fx:id="forecast_6_icon" fitHeight="80.0" fitWidth="80.0"
+														   pickOnBounds="true" preserveRatio="true"
+														   GridPane.columnIndex="6" GridPane.valignment="TOP">
+													<image>
+														<Image url="@icons/placeholder.png"/>
+													</image>
+												</ImageView>
+												<Text fx:id="forecast_6_text" strokeType="OUTSIDE" strokeWidth="0.0"
+													  text="8pm" GridPane.columnIndex="6" GridPane.halignment="CENTER"
+													  GridPane.rowIndex="1" GridPane.valignment="CENTER">
+													<font>
+														<Font size="19.0"/>
+													</font>
+												</Text>
+
+												<ImageView fx:id="forecast_7_icon" fitHeight="80.0" fitWidth="80.0"
+														   pickOnBounds="true" preserveRatio="true"
+														   GridPane.columnIndex="7" GridPane.valignment="TOP">
+													<image>
+														<Image url="@icons/placeholder.png"/>
+													</image>
+												</ImageView>
+												<Text fx:id="forecast_7_text" strokeType="OUTSIDE" strokeWidth="0.0"
+													  text="9pm" GridPane.columnIndex="7" GridPane.halignment="CENTER"
+													  GridPane.rowIndex="1" GridPane.valignment="CENTER">
+													<font>
+														<Font size="19.0"/>
+													</font>
+												</Text>
+
+												<ImageView fx:id="forecast_8_icon" fitHeight="80.0" fitWidth="80.0"
+														   pickOnBounds="true" preserveRatio="true"
+														   GridPane.columnIndex="8" GridPane.valignment="TOP">
+													<image>
+														<Image url="@icons/placeholder.png"/>
+													</image>
+												</ImageView>
+												<Text fx:id="forecast_8_text" strokeType="OUTSIDE" strokeWidth="0.0"
+													  text="10pm" GridPane.columnIndex="8" GridPane.halignment="CENTER"
+													  GridPane.rowIndex="1" GridPane.valignment="CENTER">
+													<font>
+														<Font size="19.0"/>
+													</font>
+												</Text>
+
+												<ImageView fx:id="forecast_9_icon" fitHeight="80.0" fitWidth="80.0"
+														   pickOnBounds="true" preserveRatio="true"
+														   GridPane.columnIndex="9" GridPane.valignment="TOP">
+													<image>
+														<Image url="@icons/placeholder.png"/>
+													</image>
+												</ImageView>
+												<Text fx:id="forecast_9_text" strokeType="OUTSIDE" strokeWidth="0.0"
+													  text="11pm" GridPane.columnIndex="9" GridPane.halignment="CENTER"
+													  GridPane.rowIndex="1" GridPane.valignment="CENTER">
+													<font>
+														<Font size="19.0"/>
+													</font>
+												</Text>
+
+												<ImageView fx:id="forecast_10_icon" fitHeight="80.0" fitWidth="80.0"
+														   pickOnBounds="true" preserveRatio="true"
+														   GridPane.columnIndex="10" GridPane.valignment="TOP">
+													<image>
+														<Image url="@icons/placeholder.png"/>
+													</image>
+												</ImageView>
+												<Text fx:id="forecast_10_text" strokeType="OUTSIDE" strokeWidth="0.0"
+													  text="12am" GridPane.columnIndex="10" GridPane.halignment="CENTER"
+													  GridPane.rowIndex="1" GridPane.valignment="CENTER">
+													<font>
+														<Font size="19.0"/>
+													</font>
+												</Text>
+
+												<ImageView fx:id="forecast_11_icon" fitHeight="80.0" fitWidth="80.0"
+														   pickOnBounds="true" preserveRatio="true"
+														   GridPane.columnIndex="11" GridPane.valignment="TOP">
+													<image>
+														<Image url="@icons/placeholder.png"/>
+													</image>
+												</ImageView>
+												<Text fx:id="forecast_11_text" strokeType="OUTSIDE" strokeWidth="0.0"
+													  text="1am" GridPane.columnIndex="11" GridPane.halignment="CENTER"
+													  GridPane.rowIndex="1" GridPane.valignment="CENTER">
+													<font>
+														<Font size="19.0"/>
+													</font>
+												</Text>
+
+											</children>
+
+										</GridPane>
+
+									</children>
+
+								</AnchorPane>
+
+							</content>
+
+						</ScrollPane>
+
+					</children>
+
+				</GridPane>
+
+				<!-- ============ Forecast ScrollPane ============ -->
+
+				<ScrollPane fx:id="forecast_scrollpane" hbarPolicy="NEVER" hmax="0.0"
+							style="-fx-background-color: transparent; -fx-background: transparent; -fx-view-order: 1" vbarPolicy="NEVER">
+
+					<content>
+						<AnchorPane>
+							<children>
+								<AnchorPane fx:id="forecast_anchor" AnchorPane.topAnchor="550" />
+							</children>
+						</AnchorPane>
+					</content>
+
+				</ScrollPane>
+
+			</children>
+
+		</StackPane>
+
+	</center>
+
+</View>
