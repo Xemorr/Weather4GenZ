@@ -2,6 +2,7 @@ package group.six.weather4genz;
 
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
+import com.jayway.jsonpath.PathNotFoundException;
 import okhttp3.*;
 import org.jetbrains.annotations.NotNull;
 
@@ -157,9 +158,15 @@ public class WeatherDataHandler {
             public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
                 String json = response.body().string();
                 DocumentContext parse = JsonPath.parse(json);
-                double latitude = parse.read("$[0].lat", Double.class);
-                double longitude = parse.read("$[0].lon", Double.class);
-
+                double latitude;
+                double longitude;
+                try {
+                     latitude = parse.read("$[0].lat", Double.class);
+                     longitude = parse.read("$[0].lon", Double.class);
+                } catch (PathNotFoundException e) {
+                    latitude = 52.205276;
+                    longitude = 0.199167; //latitude and longitude of cambridge as default
+                }
                 completableFuture.complete(new Location(latitude, longitude));
             }
         });

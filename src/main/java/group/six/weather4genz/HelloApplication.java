@@ -10,9 +10,8 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.time.LocalDate;
+import java.text.DecimalFormat;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
@@ -36,6 +35,21 @@ public class HelloApplication extends Application {
                 mainLoop();
             }
         }, 0, TimeUnit.MINUTES.toMillis(5));
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                timeLoop();
+            }
+        }, 0, TimeUnit.SECONDS.toMillis(1));
+    }
+
+    public static void timeLoop() {
+        //Handle time & date
+        Text time_text = (Text) scene.lookup("#time_text");
+        Text date_text = (Text) scene.lookup("#date_text");
+        LocalDateTime now = LocalDateTime.now();
+        date_text.setText(String.format("%s %sth %s", now.getDayOfWeek(), now.getDayOfMonth(), now.getMonth().toString()));
+        time_text.setText(String.format("%02d:%02d", now.toLocalTime().getHour(), now.toLocalTime().getMinute()));
     }
 
     public static void mainLoop() {
@@ -57,12 +71,7 @@ public class HelloApplication extends Application {
                                 e.printStackTrace();
                             }
                         }));
-        //Handle time & date
-        Text time_text = (Text) scene.lookup("#time_text");
-        Text date_text = (Text) scene.lookup("#date_text");
-        LocalDateTime now = LocalDateTime.now();
-        date_text.setText(String.format("%s %sth %s", now.getDayOfWeek(), now.getDayOfMonth(), now.getMonth().toString()));
-        time_text.setText(String.format("%s:%s", now.toLocalTime().getHour(), now.toLocalTime().getMinute()));
+
     }
 
     public static void main(String[] args) {
