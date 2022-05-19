@@ -289,6 +289,7 @@
                 <AnchorPane fx:id="homeAnchorPane" prefHeight="1300.0"
                             style="-fx-background-color: transparent; -fx-background: transparent">
                     <children>
+                        <fx:include fx:id="hourlyView" source="hourly.fxml"/>
                         <fx:include fx:id="forecastView" source="forecast.fxml"/>
                     </children>
                 </AnchorPane>
