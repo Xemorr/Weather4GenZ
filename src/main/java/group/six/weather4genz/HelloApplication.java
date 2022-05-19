@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
@@ -21,21 +22,24 @@ public class HelloApplication extends Application {
 
     public static WeatherDataHandler weatherDataHandler; //object that handles API calls
     private static Scene scene;
+    private static final int forecastCount = 12;
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("homepage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("homepage_3.fxml"));
         scene = new Scene(fxmlLoader.load(), 335, 600);
         stage.setTitle("Weather4GenZ");
         stage.setScene(scene);
         stage.show();
         Timer timer = new Timer();
+        //Executes main loop once every 5 minutes
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
                 mainLoop();
             }
         }, 0, TimeUnit.MINUTES.toMillis(5));
+        //Executes time loop once every second (basically ensures the time is always correct)
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
@@ -62,12 +66,10 @@ public class HelloApplication extends Application {
                     search_input.setText("City Not Found - defaulted to Cambridge");
                     return new WeatherDataHandler.Location(52.205276, 0.199167);
                 })
-                .thenAccept((location) -> weatherDataHandler.getCurrentWeatherData(location)
+                .thenAccept((location) -> {
+                    weatherDataHandler.getCurrentWeatherData(location)
                         .thenAccept((data) -> {
                             try {
-                                ImageView imageView = (ImageView) scene.lookup("#forecast_0_icon");
-                                String str = HelloApplication.class.getResource("/group/six/weather4genz/icons/" + data.icon() + ".png").toString();
-                                imageView.setImage(new Image(str));
                                 Text currentTemperatureText = (Text) scene.lookup("#current_temp_text");
                                 currentTemperatureText.setText(String.format("%.2f°L", data.getTemperatureInLayers()));
                                 Text currentRainText = (Text) scene.lookup("#current_rain_text");
@@ -75,7 +77,20 @@ public class HelloApplication extends Application {
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
-                        }));
+                        });
+                    weatherDataHandler.get48HourWeatherData(location)
+                            .thenAccept((data) -> {
+                                for (int i = 0; i < forecastCount; i++) {
+                                    Text text = (Text) scene.lookup(String.format("#forecast_%d_text", i));
+                                    ImageView icon = (ImageView) scene.lookup(String.format("#forecast_%d_icon", i));
+                                    int hour = LocalTime.now().getHour();
+                                    hour += i;
+                                    text.setText(hour % 12 + ((hour >= 12) ? "PM" : "AM"));
+                                    String str = HelloApplication.class.getResource("/group/six/weather4genz/icons/" + data.get(i).icon() + ".png").toString();
+                                    icon.setImage(new Image(str));
+                                }
+                            });
+                });
 
     }
 

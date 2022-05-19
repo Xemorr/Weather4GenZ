@@ -48,7 +48,7 @@
 <?import javafx.scene.text.Text?>
 
 <View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600" minWidth="300" prefHeight="600.0" prefWidth="300.0"
-	  xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+	  xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group.six.weather4genz.HelloController">
 
 	<!-- ======================== TOP ======================== -->
 
@@ -79,7 +79,7 @@
 
 				<!-- === COLUMN 1: Search icon === -->
 
-				<ImageView fx:id="search_icon" fitHeight="50.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true"
+				<ImageView fx:id="search_icon" fitHeight="50.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#onSearch"
 						   GridPane.columnIndex="1">
 					<image>
 						<Image url="@icons/placeholder.png"/>
