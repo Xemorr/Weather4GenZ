@@ -7,26 +7,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 
-public class HomeController2 {
+public class HomeController {
     @FXML
     private Label welcomeText;
 
     @FXML
     private TextField search_input;
-
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
-
-    @FXML
-    protected void onSearch() {
-        HelloApplication.mainLoop();
-    }
-
-
-
-
 
     @FXML
     public ScrollPane homeScroll;
@@ -40,9 +26,19 @@ public class HomeController2 {
     public AnchorPane root;
 
     @FXML
+    protected void onHelloButtonClick() {
+        welcomeText.setText("Welcome to JavaFX Application!");
+    }
+
+    @FXML
+    protected void onSearch() {
+        HelloApplication.mainLoop();
+    }
+
+    @FXML
     public void initialize() {
 
-        System.out.println("initislized");
+        System.out.println("initialised");
 
         homeAnchorPane.prefWidthProperty().bind(homeScroll.widthProperty());
         AnchorPane.setTopAnchor(homeScroll, SCROLL_TOP_OFFSET);
@@ -55,8 +51,6 @@ public class HomeController2 {
 
 
         //AnchorPane.setTopAnchor(helloBtn, /*homeScroll.getHeight()*/700 - FOOTER_INIT_HEIGHT);
-
-
     }
 
     public void onMouseEnteredFooter(){
