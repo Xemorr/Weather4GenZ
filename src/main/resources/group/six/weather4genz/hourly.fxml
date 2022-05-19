@@ -8,7 +8,9 @@
 <?import javafx.scene.image.*?>
 
 <AnchorPane xmlns="http://javafx.com/javafx"
-			xmlns:fx="http://javafx.com/fxml">
+			xmlns:fx="http://javafx.com/fxml"
+			fx:controller="group.six.weather4genz.Hourly">
+
 
 	<children>
 

@@ -19,7 +19,11 @@ public class HomeController {
 
     @FXML
     public AnchorPane homeAnchorPane;
+
+    @FXML
     public Node forecastView;
+    @FXML
+    public Node hourlyView;
 
     public static final double FOOTER_INIT_HEIGHT = 120;
     public static final double SCROLL_TOP_OFFSET = 60;
@@ -46,8 +50,14 @@ public class HomeController {
         // positioning to the bottom
 
         homeScroll.heightProperty().addListener((observableValue, number, t1) -> {
-            AnchorPane.setTopAnchor(forecastView, root.getHeight() - FOOTER_INIT_HEIGHT - SCROLL_TOP_OFFSET);
+            AnchorPane.setTopAnchor(forecastView, root.getHeight() - SCROLL_TOP_OFFSET);
         });
+
+        homeScroll.heightProperty().addListener((observableValue, number, t1) -> {
+            AnchorPane.setTopAnchor(hourlyView, root.getHeight() - FOOTER_INIT_HEIGHT - SCROLL_TOP_OFFSET);
+        });
+
+
 
 
         //AnchorPane.setTopAnchor(helloBtn, /*homeScroll.getHeight()*/700 - FOOTER_INIT_HEIGHT);
