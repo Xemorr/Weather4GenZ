@@ -6,12 +6,11 @@
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="group.six.weather4genz.Forecast"
-            prefHeight="400.0" prefWidth="600.0"
             style="-fx-background-color: white">
-    <Button AnchorPane.leftAnchor="0" prefHeight="100" AnchorPane.topAnchor="0" text="hello world"/>
     <children>
+
         <GridPane alignment="TOP_CENTER" gridLinesVisible="true" layoutX="57.0" layoutY="65.0" minHeight="0.0"
-                  minWidth="0.0" prefHeight="493.0" prefWidth="261.0" AnchorPane.topAnchor="65.0">
+                  minWidth="0.0" prefHeight="493.0" prefWidth="261.0" AnchorPane.topAnchor="185.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>

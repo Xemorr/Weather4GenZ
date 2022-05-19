@@ -14,3 +14,6 @@ woolly hat
 1L - one layer
 2L - two layers
 3L - three layers
+4L - four layers (assumed scarf required)
+
+blank

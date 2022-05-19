@@ -51,8 +51,8 @@
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="group.six.weather4genz.HomeController" fx:id="root">
     <children>
-        <View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600" minWidth="300" prefHeight="600.0"
-              prefWidth="300.0">
+        <View minHeight="600" minWidth="300" prefHeight="600.0"
+              prefWidth="300.0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
 
             <!-- ======================== TOP ======================== -->
 
@@ -92,7 +92,7 @@
 
                         <!-- === COLUMN 2: Search bar === -->
 
-                        <TextField fx:id="search_input" floatText="Location" prefHeight="40.0" GridPane.columnIndex="2"
+                        <TextField fx:id="search_input" text="Location" prefHeight="40.0" GridPane.columnIndex="2"
                                    GridPane.valignment="CENTER">
                             <GridPane.margin>
                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
@@ -282,13 +282,14 @@
 
         </View>
 
-        <ScrollPane fx:id="homeScroll" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0"
+        <ScrollPane fx:id="homeScroll" hbarPolicy="NEVER" hmax="0.0"
                     style="-fx-background-color: transparent; -fx-background: transparent" vbarPolicy="NEVER"
                     AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <content>
-                <AnchorPane fx:id="homeAnchorPane" prefHeight="1300.0" prefWidth="334.0"
+                <AnchorPane fx:id="homeAnchorPane" prefHeight="1300.0"
                             style="-fx-background-color: transparent; -fx-background: transparent">
                     <children>
+                        <fx:include fx:id="hourlyView" source="hourly.fxml" AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0"/>
                         <fx:include fx:id="forecastView" source="forecast.fxml"/>
                     </children>
                 </AnchorPane>
