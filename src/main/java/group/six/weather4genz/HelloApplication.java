@@ -60,6 +60,8 @@ public class HelloApplication extends Application {
     public static void mainLoop() {
         TextField search_input = (TextField) scene.lookup("#search_input");
         String search = search_input.getText();
+
+        
         //Handle current weather data
         weatherDataHandler.locationfromCity(search)
                 .exceptionally((throwable) -> {

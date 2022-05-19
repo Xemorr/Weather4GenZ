@@ -70,10 +70,10 @@
 
 				<!-- === COLUMN 0: Hamburger === -->
 
-				<ImageView fx:id="hamburger_icon" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true"
+				<ImageView fx:id="hamburger_icon" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" onMouseClicked="#onHamburgerClick"
 						   preserveRatio="true">
 					<image>
-						<Image url="@icons/placeholder.png"/>
+						<Image url="@icons/HamburgerIcon.png"/>
 					</image>
 				</ImageView>
 
@@ -82,7 +82,7 @@
 				<ImageView fx:id="search_icon" fitHeight="50.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#onSearch"
 						   GridPane.columnIndex="1">
 					<image>
-						<Image url="@icons/placeholder.png"/>
+						<Image url="@icons/SearchIcon.png"/>
 					</image>
 				</ImageView>
 
@@ -253,7 +253,7 @@
 						<ImageView fx:id="forecast_open_button" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
 								   preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1">
 							<image>
-								<Image url="@icons/placeholder.png"/>
+								<Image url="@icons/upArrowIconBlue.png"/>
 							</image>
 						</ImageView>
 

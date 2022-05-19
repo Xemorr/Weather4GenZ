@@ -20,4 +20,9 @@ public class HelloController {
     protected void onSearch() {
         HelloApplication.mainLoop();
     }
+
+    @FXML
+    protected void onHamburgerClick() {
+        
+    }
 }
