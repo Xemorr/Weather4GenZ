@@ -74,9 +74,27 @@ public class HelloApplication extends Application {
                                 currentTemperatureText.setText(String.format("%.2f°L", data.getTemperatureInLayers()));
                                 Text currentRainText = (Text) scene.lookup("#current_rain_text");
                                 currentRainText.setText(String.format("%.0f%% Humidity", data.humidity()));
+                                ImageView currentWeatherIcon = (ImageView) scene.lookup("#current_weather_icon");
+                                String weatherIconPath = HelloApplication.class.getResource("/group/six/weather4genz/icons/" + data.icon() + ".png").toString();
+                                currentWeatherIcon.setImage(new Image(weatherIconPath));
+
+                                //Clothes - Hat
+                                ImageView hat = (ImageView) scene.lookup("#clothes_head_icon");
+                                String hatIconPath = HelloApplication.class.getResource("/group/six/weather4genz/icons/" + data.icon() + ".png").toString();
+
+
+                                //Clothes - Body
+                                ImageView body = (ImageView) scene.lookup("#clothes_body_icon");
+                                String bodyIconPath = HelloApplication.class.getResource("/group/six/weather4genz/icons/" + data.icon() + ".png").toString();
+
+                                //Clothes - Legs
+                                ImageView legs = (ImageView) scene.lookup("#clothes_legs_icon");
+                                String legsIconPath = HelloApplication.class.getResource("/group/six/weather4genz/icons/" + data.icon() + ".png").toString();
+
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
+
                         });
                     weatherDataHandler.get48HourWeatherData(location)
                             .thenAccept((data) -> {
