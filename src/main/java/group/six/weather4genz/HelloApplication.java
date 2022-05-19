@@ -27,7 +27,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("homepage_3.fxml"));
-        scene = new Scene(fxmlLoader.load(), 335, 600);
+        scene = new Scene(fxmlLoader.load(), 335, 660);
         stage.setTitle("Weather4GenZ");
         stage.setScene(scene);
         stage.show();
