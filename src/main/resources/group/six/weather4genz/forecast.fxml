@@ -46,7 +46,7 @@
 
 <View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" style="-fx-background-color: AFAFAF;">
          <children>
             <GridPane alignment="TOP_CENTER" layoutX="-1.0" layoutY="2.0" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="335.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="2.0">
               <columnConstraints>
