@@ -206,7 +206,7 @@
 
 									<children>
 
-										<ImageView fx:id="current_weather_icon" fitWidth="120" pickOnBounds="true"
+										<ImageView fx:id="current_weather_icon" fitWidth="180" pickOnBounds="true"
 												   preserveRatio="true" GridPane.halignment="CENTER"
 												   GridPane.rowIndex="7">
 											<image>
