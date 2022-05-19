@@ -19,8 +19,6 @@ public class HomeController {
 
     @FXML
     public AnchorPane homeAnchorPane;
-
-    @FXML
     public Node forecastView;
     @FXML
     public Node hourlyView;

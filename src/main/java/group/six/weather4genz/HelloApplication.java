@@ -92,7 +92,7 @@ public class HelloApplication extends Application {
                                 ImageView body = (ImageView) scene.lookup("#clothes_body_icon");
                                 String bodyIconPath;
                                 try {
-                                    bodyIconPath = HelloApplication.class.getResource("/group/six/weather4genz/icons/" + Math.max(Math.min(Math.round(data.getTemperatureInLayers()), 5), 1) + "L.png").toString();
+                                    bodyIconPath = HelloApplication.class.getResource("/group/six/weather4genz/icons/" + Math.max(Math.min(Math.round(data.getTemperatureInLayers()), 4), 1) + "L.png").toString();
                                 } catch (NullPointerException e) {
                                     bodyIconPath = HelloApplication.class.getResource("/group/six/weather4genz/icons/placeholder.png").toString();
                                 }
@@ -100,7 +100,13 @@ public class HelloApplication extends Application {
 
                                 //Clothes - Legs
                                 ImageView legs = (ImageView) scene.lookup("#clothes_legs_icon");
-                                String legsIconPath = HelloApplication.class.getResource("/group/six/weather4genz/icons/" + data.icon() + ".png").toString();
+                                String legsIconPath;
+                                if (data.feelsLikeTemperature() >= 25) {
+                                    legsIconPath = HelloApplication.class.getResource("/group/six/weather4genz/icons/shorts.png").toString();
+                                } else {
+                                    legsIconPath = HelloApplication.class.getResource("/group/six/weather4genz/icons/trousers.png").toString();
+                                }
+                                legs.setImage(new Image(legsIconPath));
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
@@ -116,6 +122,12 @@ public class HelloApplication extends Application {
                                     String str = HelloApplication.class.getResource("/group/six/weather4genz/icons/" + data.get(i).icon() + ".png").toString();
                                     icon.setImage(new Image(str));
                                 }
+                            });
+                    weatherDataHandler.get7DayWeatherData(location)
+                            .thenAccept(dayData -> {
+                               for (int i = 0; i < 7; i++) {
+
+                               }
                             });
                 });
 
