@@ -92,7 +92,7 @@
 
                         <!-- === COLUMN 2: Search bar === -->
 
-                        <TextField fx:id="search_input" floatText="Location" prefHeight="40.0" GridPane.columnIndex="2"
+                        <TextField fx:id="search_input" text="Location" prefHeight="40.0" GridPane.columnIndex="2"
                                    GridPane.valignment="CENTER">
                             <GridPane.margin>
                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
@@ -282,11 +282,11 @@
 
         </View>
 
-        <ScrollPane fx:id="homeScroll" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0"
+        <ScrollPane fx:id="homeScroll" hbarPolicy="NEVER" hmax="0.0"
                     style="-fx-background-color: transparent; -fx-background: transparent" vbarPolicy="NEVER"
                     AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <content>
-                <AnchorPane fx:id="homeAnchorPane" prefHeight="1300.0" prefWidth="334.0"
+                <AnchorPane fx:id="homeAnchorPane" prefHeight="1300.0"
                             style="-fx-background-color: transparent; -fx-background: transparent">
                     <children>
                         <fx:include fx:id="forecastView" source="forecast.fxml"/>

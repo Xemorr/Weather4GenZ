@@ -21,7 +21,7 @@ public class HomeController {
     public AnchorPane homeAnchorPane;
     public Node forecastView;
 
-    public static final double FOOTER_INIT_HEIGHT = 60;
+    public static final double FOOTER_INIT_HEIGHT = 120;
     public static final double SCROLL_TOP_OFFSET = 60;
     public AnchorPane root;
 
