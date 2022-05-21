@@ -37,6 +37,7 @@ public class HelloApplication extends Application {
         scene = new Scene(fxmlLoader.load(), 335, 660);
         stage.setTitle("Weather4GenZ");
         stage.setScene(scene);
+        lightMode(scene.getRoot());
         stage.show();
         Timer timer = new Timer();
         //Executes main loop once every 5 minutes
@@ -217,7 +218,7 @@ public class HelloApplication extends Application {
         }
         if (node instanceof Parent) {
             for (Node children : ((Parent) node).getChildrenUnmodifiable()) {
-                darkMode(children);
+                lightMode(children);
             }
         }
     }

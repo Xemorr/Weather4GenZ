@@ -45,7 +45,7 @@ public class SettingsController {
             String onSwitchImagePath = HelloApplication.class.getResource("/group/six/weather4genz/icons/ToggleSwitchOn.png").toString();
             darkModeSwitch.setImage(new Image(onSwitchImagePath));
             setDarkMode();
-        }else{
+        } else {
             String onSwitchImagePath = HelloApplication.class.getResource("/group/six/weather4genz/icons/ToggleSwitchOff.png").toString();
             darkModeSwitch.setImage(new Image(onSwitchImagePath));
             setLightMode();
@@ -54,15 +54,14 @@ public class SettingsController {
     @FXML
     protected void layerModeSwitchClick(){
         isLayerModeOn = !isLayerModeOn;
+        String onSwitchImagePath;
         if (isLayerModeOn) {
-            String onSwitchImagePath = HelloApplication.class.getResource("/group/six/weather4genz/icons/ToggleSwitchOn.png").toString();
-            layerModeSwitch.setImage(new Image(onSwitchImagePath));
+            onSwitchImagePath = HelloApplication.class.getResource("/group/six/weather4genz/icons/ToggleSwitchOn.png").toString();
 
-        }else{
-            String onSwitchImagePath = HelloApplication.class.getResource("/group/six/weather4genz/icons/ToggleSwitchOff.png").toString();
-            layerModeSwitch.setImage(new Image(onSwitchImagePath));
-
+        } else {
+            onSwitchImagePath = HelloApplication.class.getResource("/group/six/weather4genz/icons/ToggleSwitchOff.png").toString();
         }
+        layerModeSwitch.setImage(new Image(onSwitchImagePath));
     }
 
     @FXML
