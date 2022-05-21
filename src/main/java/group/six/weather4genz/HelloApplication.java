@@ -29,7 +29,7 @@ public class HelloApplication extends Application {
     public static WeatherDataHandler weatherDataHandler; //object that handles API calls
     public static Scene scene;
     private static final int FORECAST_COUNT = 12;
-    public static boolean useLayer = true;
+    public static boolean useLayer = false;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -96,7 +96,7 @@ public class HelloApplication extends Application {
                                 } else if (data.feelsLikeTemperature() <= 0) { //scarves, woolly hat
                                     hatIconPath = HelloApplication.class.getResource("/group/six/weather4genz/icons/woollyhat.png").toString();
                                 } else {
-                                    hatIconPath = HelloApplication.class.getResource("/group/six/weather4genz/icons/placeholder.png").toString();
+                                    hatIconPath = HelloApplication.class.getResource("/group/six/weather4genz/icons/blank.png").toString();
                                 }
                                 Platform.runLater(() -> hat.setImage(new Image(hatIconPath)));
 
@@ -224,12 +224,12 @@ public class HelloApplication extends Application {
     }
 
     public static String formatTemperature(WeatherDataHandler.Data data) {
-        double temperature = data.getTemperatureInLayers();
+        double temperature = useLayer ? data.getTemperatureInLayers() : data.temperature();
         return useLayer ? String.format("%.2f°L", temperature) : String.format("%.2f°C", temperature);
     }
 
     public static String formatTemperature(WeatherDataHandler.DayData data, WeatherDataHandler.TimeOfDay timeOfDay) {
-        double temperature = data.feelsLikeTemperatures().getTemperatureInLayers(timeOfDay);
+        double temperature = useLayer ? data.feelsLikeTemperatures().getTemperatureInLayers(timeOfDay) : data.temperatures().getTemperature(timeOfDay);
         return useLayer ? String.format("%.2f°L", temperature) : String.format("%.2f°C", temperature);
     }
 
