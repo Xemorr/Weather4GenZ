@@ -27,7 +27,7 @@ import java.util.concurrent.TimeUnit;
 public class HelloApplication extends Application {
 
     public static WeatherDataHandler weatherDataHandler; //object that handles API calls
-    private static Scene scene;
+    public static Scene scene;
     private static final int FORECAST_COUNT = 12;
     public static boolean useLayer = true;
 

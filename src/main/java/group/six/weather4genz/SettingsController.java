@@ -70,26 +70,11 @@ public class SettingsController {
         //TODO change back to main screen
     }
     private void setDarkMode(){
-        settingsBackground.setStyle("-fx-background-color: #404040;");
-        String crossIconDarkModePath= HelloApplication.class.getResource("/group/six/weather4genz/icons/CrossIconDarkMode.png").toString();
-        crossIcon.setImage(new Image(crossIconDarkModePath));
-        Rectangle1.setStyle("-fx-fill: #404040; -fx-stroke: white; -fx-stroke-width: 1;");
-        Rectangle2.setStyle("-fx-fill: #404040; -fx-stroke: white; -fx-stroke-width: 1;");
-        Rectangle3.setStyle("-fx-fill: #404040; -fx-stroke: white; -fx-stroke-width: 1;");
-        label1.setStyle("-fx-text-fill: white;");
-        label2.setStyle("-fx-text-fill: white;");
-        label3.setStyle("-fx-text-fill: white;");
+        HelloApplication.darkMode(HelloApplication.scene.getRoot());
     }
+
     private void setLightMode(){
-        settingsBackground.setStyle("-fx-background-color: #FFFFFF;");
-        String crossIconLightModePath= HelloApplication.class.getResource("/group/six/weather4genz/icons/CrossIconLightMode.png").toString();
-        crossIcon.setImage(new Image(crossIconLightModePath));
-        Rectangle1.setStyle("-fx-fill: #FFFFFF; -fx-stroke: black; -fx-stroke-width: 1;");
-        Rectangle2.setStyle("-fx-fill: #FFFFFF; -fx-stroke: black; -fx-stroke-width: 1;");
-        Rectangle3.setStyle("-fx-fill: #FFFFFF; -fx-stroke: black; -fx-stroke-width: 1;");
-        label1.setStyle("-fx-text-fill: black;");
-        label2.setStyle("-fx-text-fill: black;");
-        label3.setStyle("-fx-text-fill: black;");
+        HelloApplication.lightMode(HelloApplication.scene.getRoot());
     }
 
 }
