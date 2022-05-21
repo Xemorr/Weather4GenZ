@@ -191,11 +191,15 @@ public class WeatherDataHandler {
      */
     public static final record DayTemperatures(double morningTemperature, double dayTemperature, double eveningTemperature, double nightTemperature) {
         public double getTemperatureInLayers(TimeOfDay timeOfDay) {
+            return Math.max((41 - getTemperature(timeOfDay)) / 13.5, 1);
+        }
+
+        public double getTemperature(TimeOfDay timeOfDay) {
             return switch (timeOfDay) {
-                case MORNING -> Math.max((41 - morningTemperature) / 13.5, 1);
-                case DAY -> Math.max((41 - dayTemperature) / 13.5, 1);
-                case EVENING -> Math.max((41 - eveningTemperature) / 13.5, 1);
-                case NIGHT -> Math.max((41 - nightTemperature) / 13.5, 1);
+                case MORNING -> morningTemperature;
+                case DAY -> dayTemperature;
+                case EVENING -> eveningTemperature;
+                case NIGHT -> nightTemperature;
             };
         }
     }

@@ -10,7 +10,6 @@ public class SettingsController {
 
     //switch states
     private boolean isDarkModeOn = false;
-    private boolean isLayerModeOn = false;
 
     //switches
     @FXML
@@ -53,14 +52,14 @@ public class SettingsController {
     }
     @FXML
     protected void layerModeSwitchClick(){
-        isLayerModeOn = !isLayerModeOn;
+        HelloApplication.useLayer = !HelloApplication.useLayer;
         String onSwitchImagePath;
-        if (isLayerModeOn) {
+        if (HelloApplication.useLayer) {
             onSwitchImagePath = HelloApplication.class.getResource("/group/six/weather4genz/icons/ToggleSwitchOn.png").toString();
-
         } else {
             onSwitchImagePath = HelloApplication.class.getResource("/group/six/weather4genz/icons/ToggleSwitchOff.png").toString();
         }
+        HelloApplication.mainLoop();
         layerModeSwitch.setImage(new Image(onSwitchImagePath));
     }
 
