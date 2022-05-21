@@ -2,8 +2,10 @@ package group.six.weather4genz;
 
 import com.gluonhq.charm.glisten.control.TextField;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
@@ -21,6 +23,7 @@ public class HelloApplication extends Application {
     public static WeatherDataHandler weatherDataHandler; //object that handles API calls
     private static Scene scene;
     private static final int FORECAST_COUNT = 12;
+    public static boolean useLayer = true;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -51,8 +54,8 @@ public class HelloApplication extends Application {
         Text time_text = (Text) scene.lookup("#time_text");
         Text date_text = (Text) scene.lookup("#date_text");
         LocalDateTime now = LocalDateTime.now();
-        date_text.setText(String.format("%s %sth %s", now.getDayOfWeek(), now.getDayOfMonth(), now.getMonth().toString()));
-        time_text.setText(String.format("%02d:%02d", now.toLocalTime().getHour(), now.toLocalTime().getMinute()));
+        Platform.runLater(() -> date_text.setText(String.format("%s %sth %s", now.getDayOfWeek(), now.getDayOfMonth(), now.getMonth().toString())));
+        Platform.runLater(() -> time_text.setText(String.format("%02d:%02d", now.toLocalTime().getHour(), now.toLocalTime().getMinute())));
     }
 
     public static void mainLoop() {
@@ -69,12 +72,12 @@ public class HelloApplication extends Application {
                         .thenAccept((data) -> {
                             try {
                                 Text currentTemperatureText = (Text) scene.lookup("#current_temp_text");
-                                currentTemperatureText.setText(String.format("%.2f°L", data.getTemperatureInLayers()));
+                                currentTemperatureText.setText(formatTemperature(data));
                                 Text currentRainText = (Text) scene.lookup("#current_rain_text");
                                 currentRainText.setText(String.format("%.0f%% Humidity", data.humidity()));
                                 ImageView currentWeatherIcon = (ImageView) scene.lookup("#current_weather_icon");
                                 String weatherIconPath = HelloApplication.class.getResource("/group/six/weather4genz/icons/" + data.icon() + ".png").toString();
-                                currentWeatherIcon.setImage(new Image(weatherIconPath));
+                                Platform.runLater(() -> currentWeatherIcon.setImage(new Image(weatherIconPath)));
 
                                 //Clothes - Hat
                                 ImageView hat = (ImageView) scene.lookup("#clothes_head_icon");
@@ -86,18 +89,12 @@ public class HelloApplication extends Application {
                                 } else {
                                     hatIconPath = HelloApplication.class.getResource("/group/six/weather4genz/icons/placeholder.png").toString();
                                 }
-                                hat.setImage(new Image(hatIconPath));
+                                Platform.runLater(() -> hat.setImage(new Image(hatIconPath)));
 
                                 //Clothes - Body
                                 ImageView body = (ImageView) scene.lookup("#clothes_body_icon");
-                                String bodyIconPath;
-                                try {
-                                    bodyIconPath = HelloApplication.class.getResource("/group/six/weather4genz/icons/" + Math.max(Math.min(Math.round(data.getTemperatureInLayers()), 4), 1) + "L.png").toString();
-                                } catch (NullPointerException e) {
-                                    bodyIconPath = HelloApplication.class.getResource("/group/six/weather4genz/icons/placeholder.png").toString();
-                                }
-                                body.setImage(new Image(bodyIconPath));
-
+                                String bodyIconPath = HelloApplication.class.getResource("/group/six/weather4genz/icons/" + Math.max(Math.min(Math.round(data.getTemperatureInLayers()), 4), 1) + "L.png").toString();
+                                Platform.runLater(() -> body.setImage(new Image(bodyIconPath)));
                                 //Clothes - Legs
                                 ImageView legs = (ImageView) scene.lookup("#clothes_legs_icon");
                                 String legsIconPath;
@@ -106,31 +103,69 @@ public class HelloApplication extends Application {
                                 } else {
                                     legsIconPath = HelloApplication.class.getResource("/group/six/weather4genz/icons/trousers.png").toString();
                                 }
-                                legs.setImage(new Image(legsIconPath));
+                                Platform.runLater(() -> legs.setImage(new Image(legsIconPath)));
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
                         });
                     weatherDataHandler.get48HourWeatherData(location)
                             .thenAccept((data) -> {
-                                for (int i = 0; i < FORECAST_COUNT; i++) {
-                                    Text text = (Text) scene.lookup(String.format("#forecast_%d_text", i));
-                                    ImageView icon = (ImageView) scene.lookup(String.format("#forecast_%d_icon", i));
-                                    int hour = LocalTime.now().getHour();
-                                    hour = (hour + i) % 24;
-                                    text.setText(hour % 12 + ((hour >= 12) ? "PM" : "AM"));
-                                    String str = HelloApplication.class.getResource("/group/six/weather4genz/icons/" + data.get(i).icon() + ".png").toString();
-                                    icon.setImage(new Image(str));
+                                try {
+                                    for (int i = 0; i < FORECAST_COUNT; i++) {
+                                        Label label = (Label) scene.lookup(String.format("#forecast_%d_text", i));
+                                        ImageView icon = (ImageView) scene.lookup(String.format("#forecast_%d_icon", i));
+                                        int hour = (LocalTime.now().getHour() + i) % 24;
+                                        Platform.runLater(() -> label.setText(hour % 12 + ((hour >= 12) ? "PM" : "AM")));
+                                        String str = HelloApplication.class.getResource("/group/six/weather4genz/icons/" + data.get(i).icon() + ".png").toString();
+                                        Platform.runLater(() -> icon.setImage(new Image(str)));
+                                    }
+                                } catch (Exception e) {
+                                    //e.printStackTrace();
                                 }
                             });
                     weatherDataHandler.get7DayWeatherData(location)
-                            .thenAccept(dayData -> {
+                            .thenAccept(dayDatas -> {
                                for (int i = 0; i < 7; i++) {
+                                   try {
+                                       Label dayName = (Label) scene.lookup(String.format("#day_%s", i));
+                                       String dayNameStr = LocalDateTime.now().plusDays(i).getDayOfWeek().toString().substring(0, 3);
+                                       Platform.runLater(() -> dayName.setText(dayNameStr));
 
+                                       ImageView morning = (ImageView) scene.lookup(String.format("#image_%s%s", i, 0));
+                                       ImageView day = (ImageView) scene.lookup(String.format("#image_%s%s", i, 1));
+                                       ImageView evening = (ImageView) scene.lookup(String.format("#image_%s%s", i, 2));
+                                       ImageView night = (ImageView) scene.lookup(String.format("#image_%s%s", i, 3));
+                                       WeatherDataHandler.DayData dayData = dayDatas.get(i);
+                                       String weatherTypePath = HelloApplication.class.getResource("/group/six/weather4genz/icons/" + dayData.icon() + ".png").toString();
+                                       morning.setImage(new Image(weatherTypePath));
+                                       day.setImage(new Image(weatherTypePath));
+                                       evening.setImage(new Image(weatherTypePath));
+                                       night.setImage(new Image(weatherTypePath));
+                                       Label morningLabel = (Label) scene.lookup(String.format("#label_%s%s", i, 0));
+                                       Label dayLabel = (Label) scene.lookup(String.format("#label_%s%s", i, 1));
+                                       Label eveningLabel = (Label) scene.lookup(String.format("#label_%s%s", i, 2));
+                                       Label nightLabel = (Label) scene.lookup(String.format("#label_%s%s", i, 3));
+                                       Platform.runLater(() -> morningLabel.setText(formatTemperature(dayData, WeatherDataHandler.TimeOfDay.MORNING)));
+                                       Platform.runLater(() -> dayLabel.setText(formatTemperature(dayData, WeatherDataHandler.TimeOfDay.DAY)));
+                                       Platform.runLater(() -> eveningLabel.setText(formatTemperature(dayData, WeatherDataHandler.TimeOfDay.EVENING)));
+                                       Platform.runLater(() -> nightLabel.setText(formatTemperature(dayData, WeatherDataHandler.TimeOfDay.NIGHT)));
+                                   } catch (Exception e) {
+                                       e.printStackTrace();
+                                   }
                                }
                             });
                 });
 
+    }
+
+    public static String formatTemperature(WeatherDataHandler.Data data) {
+        double temperature = data.getTemperatureInLayers();
+        return useLayer ? String.format("%.2f°L", temperature) : String.format("%.2f°C", temperature);
+    }
+
+    public static String formatTemperature(WeatherDataHandler.DayData data, WeatherDataHandler.TimeOfDay timeOfDay) {
+        double temperature = data.feelsLikeTemperatures().getTemperatureInLayers(timeOfDay);
+        return useLayer ? String.format("%.2f°L", temperature) : String.format("%.2f°C", temperature);
     }
 
     public static void main(String[] args) {

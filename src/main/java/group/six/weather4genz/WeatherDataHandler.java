@@ -29,7 +29,7 @@ public class WeatherDataHandler {
     public CompletableFuture<List<Data>> get48HourWeatherData(Location location) {
         CompletableFuture<List<Data>> completableFuture = new CompletableFuture<>();
         Request request = new Request.Builder()
-                .url(String.format("https://api.openweathermap.org/data/2.5/onecall?lat=%s&lon=%s&exclude=daily&units=metric&appid=%s", location.latitude, location.longitude, token))
+                .url(String.format("https://api.openweathermap.org/data/3.0/onecall?lat=%s&lon=%s&exclude=daily&units=metric&appid=%s", location.latitude, location.longitude, token))
                 .build();
         Call call = okHttpClient.newCall(request);
         call.enqueue(new Callback() {
@@ -59,14 +59,14 @@ public class WeatherDataHandler {
     }
 
     /**
-     * Use this API endpoint: https://api.openweathermap.org/data/2.5/onecall?lat=latitude_here&lon=longitude_here&exclude=daily,minutely&units=metric&appid=API_key_here
+     * Use this API endpoint: https://api.openweathermap.org/data/3.0/onecall?lat=latitude_here&lon=longitude_here&exclude=daily,minutely&units=metric&appid=API_key_here
      * @param location - the latitude and longitude of the location you want to check the weather of
      * @return data - All of the relevant data wrapped in a future to preven2t freezing of the application
      */
     public CompletableFuture<List<DayData>> get7DayWeatherData(Location location) {
         CompletableFuture<List<DayData>> completableFuture = new CompletableFuture<>();
         Request request = new Request.Builder()
-                .url(String.format("https://api.openweathermap.org/data/2.5/onecall?lat=%s&lon=%s&exclude=minutely,hourly&units=metric&appid=%s", location.latitude, location.longitude, token))
+                .url(String.format("https://api.openweathermap.org/data/3.0/onecall?lat=%s&lon=%s&exclude=minutely,hourly&units=metric&appid=%s", location.latitude, location.longitude, token))
                 .build();
         Call call = okHttpClient.newCall(request);
         call.enqueue(new Callback() {
@@ -87,7 +87,7 @@ public class WeatherDataHandler {
 
                     double[] temperaturesAtTimes = new double[4]; //morn, day, eve, night temperature corresponds to each index
                     double[] feelsLikeAtTimes = new double[4];
-                    for (int j = 0; i < times.length; i++) { //morn, day, eve, night
+                    for (int j = 0; j < times.length; j++) { //morn, day, eve, night
                         temperaturesAtTimes[j] = parse.read(String.format("$.daily[%s].temp.%s", i, times[j]), Double.class);
                         feelsLikeAtTimes[j] = parse.read(String.format("$.daily[%s].feels_like.%s", i, times[j]), Double.class);
                     }
@@ -189,10 +189,23 @@ public class WeatherDataHandler {
     /**
      * The record that holds the various temperatures corresponding to general sections of the day
      */
-    public static final record DayTemperatures(double morningTemperature, double dayTemperature, double eveningTemperature, double nightTemperature) {}
+    public static final record DayTemperatures(double morningTemperature, double dayTemperature, double eveningTemperature, double nightTemperature) {
+        public double getTemperatureInLayers(TimeOfDay timeOfDay) {
+            return switch (timeOfDay) {
+                case MORNING -> Math.max((41 - morningTemperature) / 13.5, 1);
+                case DAY -> Math.max((41 - dayTemperature) / 13.5, 1);
+                case EVENING -> Math.max((41 - eveningTemperature) / 13.5, 1);
+                case NIGHT -> Math.max((41 - nightTemperature) / 13.5, 1);
+            };
+        }
+    }
 
     /**
      * Holds the data given for daily data (this is in a weirder format than Data allows, multiple temperatures per day but not multiple weather readings)
      */
     public static final record DayData(String weatherType, String weatherDescription, String icon, double windSpeed, DayTemperatures temperatures, DayTemperatures feelsLikeTemperatures) {}
+
+    public enum TimeOfDay {
+        MORNING,  DAY,  EVENING, NIGHT;
+    }
 }

@@ -82,7 +82,7 @@
                               <Image url="@icons/placeholder.png" />
                            </image>
                         </ImageView>
-                        <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <Label id="label_00" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                      </children>
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -102,7 +102,7 @@
                               <Image url="@icons/placeholder.png" />
                            </image>
                         </ImageView>
-                        <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <Label id="label_01" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                      </children>
                       <GridPane.margin>
                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -122,7 +122,7 @@
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_02" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -142,7 +142,7 @@
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_03" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -163,7 +163,7 @@
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_10" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -183,7 +183,7 @@
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_11" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -203,7 +203,7 @@
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_12" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -218,12 +218,12 @@
                            <RowConstraints maxHeight="29.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
                        </rowConstraints>
                        <children>
-                           <ImageView id="13" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" translateX="-0.7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <ImageView id="image_13" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" translateX="-0.7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                                <image>
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_13" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -244,7 +244,7 @@
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_20" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -264,7 +264,7 @@
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_21" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -284,7 +284,7 @@
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_22" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -304,7 +304,7 @@
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_23" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -325,7 +325,7 @@
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_30" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -345,7 +345,7 @@
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_31" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -365,7 +365,7 @@
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_32" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -385,7 +385,7 @@
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_33" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -406,7 +406,7 @@
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_40" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -426,7 +426,7 @@
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_41" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -446,7 +446,7 @@
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_42" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -466,7 +466,7 @@
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_43" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -487,7 +487,7 @@
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_50" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -507,7 +507,7 @@
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_51" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -527,7 +527,7 @@
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_52" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -547,7 +547,7 @@
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_53" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -568,7 +568,7 @@
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_60" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -588,7 +588,7 @@
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_61" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -608,7 +608,7 @@
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_62" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -628,20 +628,20 @@
                                    <Image url="@icons/placeholder.png" />
                                </image>
                            </ImageView>
-                           <Label alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           <Label id="label_63" alignment="CENTER" text="20°C" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                        </children>
                        <GridPane.margin>
                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                        </GridPane.margin>
                    </GridPane>
 
-                  <Label text="Mon" GridPane.halignment="CENTER" />
-                  <Label text="Tue" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                  <Label text="Wed" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                  <Label text="Thur" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-                  <Label text="Fri" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-                  <Label text="Sat" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-                  <Label text="Sun" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                  <Label id="day_0" text="Mon" GridPane.halignment="CENTER" />
+                  <Label id="day_1" text="Tue" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Label id="day_2" text="Wed" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Label id="day_3" text="Thur" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <Label id="day_4" text="Fri" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                  <Label id="day_5" text="Sat" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                  <Label id="day_6" text="Sun" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
 
 
                </children>
