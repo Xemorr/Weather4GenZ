@@ -70,7 +70,7 @@
 
 				<ImageView fx:id="hamburger_icon" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
 					<image>
-						<Image url="@icons/placeholder.png" />
+						<Image url="@icons/blank.png" />
 					</image>
 				</ImageView>
 
@@ -78,7 +78,7 @@
 
 				<ImageView fx:id="search_icon" fitHeight="50.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
 					<image>
-						<Image url="@icons/placeholder.png" />
+						<Image url="@icons/blank.png" />
 					</image>
 				</ImageView>
 
@@ -149,19 +149,19 @@
 
 								<ImageView fx:id="clothes_head_icon" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER">
 									<image>
-										<Image url="@icons/placeholder.png" />
+										<Image url="@icons/blank.png" />
 									</image>
 								</ImageView>
 
 								<ImageView fx:id="clothes_body_icon" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1">
 									<image>
-										<Image url="@icons/placeholder.png" />
+										<Image url="@icons/blank.png" />
 									</image>
 								</ImageView>
 
 								<ImageView fx:id="clothes_legs_icon" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="2">
 									<image>
-										<Image url="@icons/placeholder.png" />
+										<Image url="@icons/blank.png" />
 									</image>
 
 								</ImageView>
@@ -193,7 +193,7 @@
 
 								<ImageView fx:id="current_weather_icon" fitWidth="120" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="7">
 									<image>
-										<Image url="@icons/placeholder.png" />
+										<Image url="@icons/blank.png" />
 									</image>
 								</ImageView>
 
@@ -230,7 +230,7 @@
 
 				<ImageView fx:id="forecast_open_button" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1">
 					<image>
-						<Image url="@icons/placeholder.png" />
+						<Image url="@icons/blank.png" />
 					</image>
 				</ImageView>
 
@@ -262,7 +262,7 @@
 									<children>
 										<ImageView fx:id="forecast_0_icon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.valignment="TOP">
 											<image>
-												<Image url="@icons/placeholder.png" />
+												<Image url="@icons/blank.png" />
 											</image>
 										</ImageView>
 										<Text fx:id="forecast_0_text" strokeType="OUTSIDE" strokeWidth="0.0" text="2pm" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
@@ -273,7 +273,7 @@
 
 										<ImageView fx:id="forecast_1_icon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.valignment="TOP">
 											<image>
-												<Image url="@icons/placeholder.png" />
+												<Image url="@icons/blank.png" />
 											</image>
 										</ImageView>
 										<Text fx:id="forecast_1_text" strokeType="OUTSIDE" strokeWidth="0.0" text="3pm" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
@@ -284,7 +284,7 @@
 
 										<ImageView fx:id="forecast_2_icon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.valignment="TOP">
 											<image>
-												<Image url="@icons/placeholder.png" />
+												<Image url="@icons/blank.png" />
 											</image>
 										</ImageView>
 										<Text fx:id="forecast_2_text" strokeType="OUTSIDE" strokeWidth="0.0" text="4pm" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
@@ -295,7 +295,7 @@
 
 										<ImageView fx:id="forecast_3_icon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.valignment="TOP">
 											<image>
-												<Image url="@icons/placeholder.png" />
+												<Image url="@icons/blank.png" />
 											</image>
 										</ImageView>
 										<Text fx:id="forecast_3_text" strokeType="OUTSIDE" strokeWidth="0.0" text="5pm" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
@@ -306,7 +306,7 @@
 
 										<ImageView fx:id="forecast_4_icon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.valignment="TOP">
 											<image>
-												<Image url="@icons/placeholder.png" />
+												<Image url="@icons/blank.png" />
 											</image>
 										</ImageView>
 										<Text fx:id="forecast_4_text" strokeType="OUTSIDE" strokeWidth="0.0" text="6pm" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
@@ -317,7 +317,7 @@
 
 										<ImageView fx:id="forecast_5_icon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.valignment="TOP">
 											<image>
-												<Image url="@icons/placeholder.png" />
+												<Image url="@icons/blank.png" />
 											</image>
 										</ImageView>
 										<Text fx:id="forecast_5_text" strokeType="OUTSIDE" strokeWidth="0.0" text="7pm" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
@@ -328,7 +328,7 @@
 
 										<ImageView fx:id="forecast_6_icon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.valignment="TOP">
 											<image>
-												<Image url="@icons/placeholder.png" />
+												<Image url="@icons/blank.png" />
 											</image>
 										</ImageView>
 										<Text fx:id="forecast_6_text" strokeType="OUTSIDE" strokeWidth="0.0" text="8pm" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
@@ -339,7 +339,7 @@
 
 										<ImageView fx:id="forecast_7_icon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.valignment="TOP">
 											<image>
-												<Image url="@icons/placeholder.png" />
+												<Image url="@icons/blank.png" />
 											</image>
 										</ImageView>
 										<Text fx:id="forecast_7_text" strokeType="OUTSIDE" strokeWidth="0.0" text="9pm" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
@@ -350,7 +350,7 @@
 
 										<ImageView fx:id="forecast_8_icon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.valignment="TOP">
 											<image>
-												<Image url="@icons/placeholder.png" />
+												<Image url="@icons/blank.png" />
 											</image>
 										</ImageView>
 										<Text fx:id="forecast_8_text" strokeType="OUTSIDE" strokeWidth="0.0" text="10pm" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
@@ -361,7 +361,7 @@
 
 										<ImageView fx:id="forecast_9_icon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.valignment="TOP">
 											<image>
-												<Image url="@icons/placeholder.png" />
+												<Image url="@icons/blank.png" />
 											</image>
 										</ImageView>
 										<Text fx:id="forecast_9_text" strokeType="OUTSIDE" strokeWidth="0.0" text="11pm" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
@@ -372,7 +372,7 @@
 
 										<ImageView fx:id="forecast_10_icon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.valignment="TOP">
 											<image>
-												<Image url="@icons/placeholder.png" />
+												<Image url="@icons/blank.png" />
 											</image>
 										</ImageView>
 										<Text fx:id="forecast_10_text" strokeType="OUTSIDE" strokeWidth="0.0" text="12am" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
@@ -383,7 +383,7 @@
 
 										<ImageView fx:id="forecast_11_icon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="11" GridPane.valignment="TOP">
 											<image>
-												<Image url="@icons/placeholder.png" />
+												<Image url="@icons/blank.png" />
 											</image>
 										</ImageView>
 										<Text fx:id="forecast_11_text" strokeType="OUTSIDE" strokeWidth="0.0" text="1am" GridPane.columnIndex="11" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">

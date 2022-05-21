@@ -52,7 +52,7 @@
             fx:controller="group.six.weather4genz.HomeController" fx:id="root">
     <children>
         <View minHeight="600" minWidth="300" prefHeight="600.0"
-              prefWidth="300.0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+              prefWidth="300.0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="0">
 
             <!-- ======================== TOP ======================== -->
 
@@ -72,12 +72,19 @@
 
                     <children>
 
-                        <!-- === COLUMN 0: Hamburger === -->
+                        <!-- === COLUMN 0: Hamburger and Cross === -->
 
                         <ImageView fx:id="hamburger_icon" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true"
                                    preserveRatio="true" onMouseClicked="#onHamburgerClick">
                             <image>
-                                <Image url="@icons/placeholder.png"/>
+                                <Image url="@icons/blank.png"/>
+                            </image>
+                        </ImageView>
+
+                        <ImageView fx:id="cross_icon" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" visible="false"
+                                   preserveRatio="true" onMouseClicked="#onHamburgerClick">
+                            <image>
+                                <Image url="@icons/blank.png"/>
                             </image>
                         </ImageView>
 
@@ -86,7 +93,7 @@
                         <ImageView fx:id="search_icon" fitHeight="50.0" fitWidth="30.0" onMouseClicked="#onSearch"
                                    pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
                             <image>
-                                <Image url="@icons/placeholder.png"/>
+                                <Image url="@icons/blank.png"/>
                             </image>
                         </ImageView>
 
@@ -154,33 +161,35 @@
                                             </columnConstraints>
 
                                             <rowConstraints>
+                                                <RowConstraints percentHeight="0.0" vgrow="SOMETIMES"/>
                                                 <RowConstraints percentHeight="30.0" vgrow="SOMETIMES"/>
                                                 <RowConstraints percentHeight="30.0" vgrow="SOMETIMES"/>
-                                                <RowConstraints percentHeight="40.0" vgrow="SOMETIMES"/>
+                                                <RowConstraints percentHeight="30.0" vgrow="SOMETIMES"/>
+                                                <RowConstraints percentHeight="10.0" vgrow="SOMETIMES"/>
                                             </rowConstraints>
 
                                             <children>
 
-                                                <ImageView fx:id="clothes_head_icon" fitWidth="80.0" pickOnBounds="true"
-                                                           preserveRatio="true" GridPane.halignment="CENTER">
+                                                <ImageView fx:id="clothes_head_icon" fitWidth="100.0" pickOnBounds="true"
+                                                           preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                                                     <image>
-                                                        <Image url="@icons/placeholder.png"/>
+                                                        <Image url="@icons/blank.png"/>
                                                     </image>
                                                 </ImageView>
 
-                                                <ImageView fx:id="clothes_body_icon" fitWidth="80.0" pickOnBounds="true"
-                                                           preserveRatio="true" GridPane.halignment="CENTER"
-                                                           GridPane.rowIndex="1">
-                                                    <image>
-                                                        <Image url="@icons/placeholder.png"/>
-                                                    </image>
-                                                </ImageView>
-
-                                                <ImageView fx:id="clothes_legs_icon" fitWidth="80.0" pickOnBounds="true"
+                                                <ImageView fx:id="clothes_body_icon" fitWidth="100.0" pickOnBounds="true"
                                                            preserveRatio="true" GridPane.halignment="CENTER"
                                                            GridPane.rowIndex="2">
                                                     <image>
-                                                        <Image url="@icons/placeholder.png"/>
+                                                        <Image url="@icons/blank.png"/>
+                                                    </image>
+                                                </ImageView>
+
+                                                <ImageView fx:id="clothes_legs_icon" fitWidth="120.0" pickOnBounds="true"
+                                                           preserveRatio="true" GridPane.halignment="CENTER"
+                                                           GridPane.rowIndex="3">
+                                                    <image>
+                                                        <Image url="@icons/blank.png"/>
                                                     </image>
 
                                                 </ImageView>
@@ -215,7 +224,7 @@
                                                            pickOnBounds="true" preserveRatio="true"
                                                            GridPane.halignment="CENTER" GridPane.rowIndex="7">
                                                     <image>
-                                                        <Image url="@icons/placeholder.png"/>
+                                                        <Image url="@icons/blank.png"/>
                                                     </image>
                                                 </ImageView>
 

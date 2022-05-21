@@ -6,11 +6,20 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 
 public class HomeController {
     @FXML
+	public ImageView cross_icon;
+	@FXML
     private Label welcomeText;
+
+    @FXML
+    private ImageView hamburger_icon;
 
     @FXML
     private TextField search_input;
@@ -43,6 +52,9 @@ public class HomeController {
         HelloApplication.mainLoop();
     }
 
+    //static public Image hamburgerIconLight = new Image ( "/group/six/weather4genz/icons/hamburger_icon.png" );
+    //static public Image crossImage = new Image ( "/group/six/weather4genz/icons/CrossIcon.png" );
+
     @FXML
     public void initialize() {
 
@@ -63,12 +75,22 @@ public class HomeController {
 
         settingsAnchorPane.setVisible ( false );
 
+        search_input.setOnKeyPressed ( ( KeyEvent event ) -> {
+            if ( event.getCode () == KeyCode.ENTER )
+                onSearch ();
+        } );
+
         //settingsScroll.setMouseTransparent ( true );
 
         //AnchorPane.setTopAnchor(helloBtn, /*homeScroll.getHeight()*/700 - FOOTER_INIT_HEIGHT);
     }
 
-    public void onHamburgerClick () { settingsAnchorPane.setVisible ( !settingsAnchorPane.isVisible () ); }
+    public void onHamburgerClick ()
+    {
+        settingsAnchorPane.setVisible ( !settingsAnchorPane.isVisible () );
+        hamburger_icon.setVisible ( !hamburger_icon.isVisible () );
+        cross_icon.setVisible ( !cross_icon.isVisible () );
+    }
 
     public void onMouseEnteredFooter(){
         homeScroll.setMouseTransparent(false);
