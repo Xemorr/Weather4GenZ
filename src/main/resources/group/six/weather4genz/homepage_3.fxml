@@ -286,11 +286,24 @@
                     style="-fx-background-color: transparent; -fx-background: transparent" vbarPolicy="NEVER"
                     AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <content>
-                <AnchorPane fx:id="homeAnchorPane" prefHeight="1300.0"
+                <AnchorPane fx:id="homeAnchorPane"
                             style="-fx-background-color: transparent; -fx-background: transparent">
                     <children>
                         <fx:include fx:id="hourlyView" source="hourly.fxml" AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0"/>
                         <fx:include fx:id="forecastView" source="forecast.fxml"/>
+                    </children>
+                </AnchorPane>
+            </content>
+        </ScrollPane>
+
+        <ScrollPane fx:id="settingsScroll" hbarPolicy="NEVER" vmax="0.0"
+                    style="-fx-background-color: transparent; -fx-background: transparent" vbarPolicy="NEVER"
+                    AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <content>
+                <AnchorPane fx:id="settingsAnchorPane"
+                            style="-fx-background-color: transparent; -fx-background: transparent" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <children>
+                        <fx:include fx:id="settingsView" source="settings2.fxml"/>
                     </children>
                 </AnchorPane>
             </content>
