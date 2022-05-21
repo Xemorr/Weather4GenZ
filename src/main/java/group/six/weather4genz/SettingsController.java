@@ -6,7 +6,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
 import com.gluonhq.charm.glisten.mvc.View;
 import javafx.scene.shape.Rectangle;
-public class settingsController {
+public class SettingsController {
 
     //switch states
     private boolean isDarkModeOn = false;

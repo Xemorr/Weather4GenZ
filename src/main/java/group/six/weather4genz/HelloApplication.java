@@ -1,17 +1,23 @@
 package group.six.weather4genz;
 
 import com.gluonhq.charm.glisten.control.TextField;
+import com.gluonhq.charm.glisten.mvc.View;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Timer;
@@ -158,6 +164,62 @@ public class HelloApplication extends Application {
                             });
                 });
 
+    }
+
+    public static void darkMode(Node node) {
+        if (node instanceof Rectangle) {
+            node.setStyle("-fx-fill: #404040; -fx-stroke: white; -fx-stroke-width: 1;");
+        }
+        else if (node instanceof Label ) {
+            node.setStyle("-fx-text-fill: white;");
+        }
+        else if (node instanceof Text) {
+            node.setStyle("-fx-fill: white;");
+        }
+        else if (node instanceof View) {
+            node.setStyle("-fx-background-color: #404040;");
+        }
+        else if (node instanceof ImageView) {
+            String id = node.getId();
+            URL resource = HelloApplication.class.getResource("/group/six/weather4genz/icons/" + id + "_dark.png");
+            if (resource != null) {
+                ImageView imageView = (ImageView) node;
+                imageView.setImage(new Image(resource.toString()));
+            }
+        }
+        if (node instanceof Parent) {
+            for (Node children : ((Parent) node).getChildrenUnmodifiable()) {
+                darkMode(children);
+            }
+        }
+    }
+
+    public static void lightMode(Node node) {
+        if (node instanceof Rectangle) {
+            node.setStyle("-fx-fill: #FFFFFF; -fx-stroke: black; -fx-stroke-width: 1;");
+        }
+        else if (node instanceof Label ) {
+            node.setStyle("-fx-text-fill: black;");
+        }
+        else if (node instanceof Text) {
+            node.setStyle("-fx-fill: black;");
+        }
+        else if (node instanceof View) {
+            node.setStyle("-fx-background-color: #FFFFFF;");
+        }
+        else if (node instanceof ImageView) {
+            String id = node.getId();
+            URL resource = HelloApplication.class.getResource("/group/six/weather4genz/icons/" + id + ".png");
+            if (resource != null) {
+                ImageView imageView = (ImageView) node;
+                imageView.setImage(new Image(resource.toString()));
+            }
+        }
+        if (node instanceof Parent) {
+            for (Node children : ((Parent) node).getChildrenUnmodifiable()) {
+                darkMode(children);
+            }
+        }
     }
 
     public static String formatTemperature(WeatherDataHandler.Data data) {

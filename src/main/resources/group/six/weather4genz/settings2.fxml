@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Rectangle?>
 
-<View fx:id="settingsBackground" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="300.0" prefHeight="600.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group.six.weather4genz.settingsController">
+<View fx:id="settingsBackground" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="300.0" prefHeight="600.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group.six.weather4genz.SettingsController">
    <center>
       <GridPane BorderPane.alignment="CENTER">
         <columnConstraints>
