@@ -30,11 +30,6 @@
             <Rectangle fx:id="Rectangle1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" stroke="BLACK" strokeType="INSIDE" translateX="-50.0" width="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Rectangle fx:id="Rectangle2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" stroke="BLACK" strokeType="INSIDE" translateX="-50.0" width="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Rectangle fx:id="Rectangle3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" stroke="BLACK" strokeType="INSIDE" translateX="-50.0" width="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <ImageView fx:id="crossIcon" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#crossIconClick" pickOnBounds="true" preserveRatio="true" translateX="5.0" translateY="-30.0">
-                <image>
-                    <Image url="@icons/CrossIconLightMode.png" />
-                </image>
-            </ImageView>
             <Label fx:id="label1" text="Dark mode" translateX="-40.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label fx:id="label2" text="Use Layer Scale" translateX="-40.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label fx:id="label3" minHeight="100.0" minWidth="200.0" prefHeight="43.0" prefWidth="200.0" text="The Layer Scale (°L) is the&#10;average number of layers&#10;to wear at this temperature" translateX="-40.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />

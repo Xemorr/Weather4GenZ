@@ -75,7 +75,7 @@
                         <!-- === COLUMN 0: Hamburger === -->
 
                         <ImageView fx:id="hamburger_icon" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true"
-                                   preserveRatio="true">
+                                   preserveRatio="true" onMouseClicked="#onHamburgerClick">
                             <image>
                                 <Image url="@icons/placeholder.png"/>
                             </image>
@@ -295,18 +295,11 @@
                 </AnchorPane>
             </content>
         </ScrollPane>
-
-        <ScrollPane fx:id="settingsScroll" hbarPolicy="NEVER" vmax="0.0"
-                    style="-fx-background-color: transparent; -fx-background: transparent" vbarPolicy="NEVER"
-                    AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-            <content>
-                <AnchorPane fx:id="settingsAnchorPane"
-                            style="-fx-background-color: transparent; -fx-background: transparent" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                    <children>
-                        <fx:include fx:id="settingsView" source="settings2.fxml"/>
-                    </children>
-                </AnchorPane>
-            </content>
-        </ScrollPane>
+            <AnchorPane fx:id="settingsAnchorPane"
+                        style="-fx-background-color: transparent; -fx-background: transparent" AnchorPane.topAnchor="60.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+                <children>
+                    <fx:include fx:id="settingsView" source="settings2.fxml"/>
+                </children>
+            </AnchorPane>
     </children>
 </AnchorPane>

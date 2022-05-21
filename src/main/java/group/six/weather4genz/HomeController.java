@@ -1,6 +1,7 @@
 package group.six.weather4genz;
 
 import com.gluonhq.charm.glisten.control.TextField;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
@@ -16,9 +17,6 @@ public class HomeController {
 
     @FXML
     public ScrollPane homeScroll;
-
-    @FXML
-    public ScrollPane settingsScroll;
 
 
     @FXML
@@ -53,8 +51,6 @@ public class HomeController {
         homeAnchorPane.prefWidthProperty().bind(homeScroll.widthProperty());
         AnchorPane.setTopAnchor(homeScroll, SCROLL_TOP_OFFSET);
 
-        settingsAnchorPane.prefHeightProperty ().bind ( settingsScroll.heightProperty () );
-
         // positioning to the bottom
 
         homeScroll.heightProperty().addListener((observableValue, number, t1) -> {
@@ -65,14 +61,14 @@ public class HomeController {
             AnchorPane.setTopAnchor(hourlyView, root.getHeight() - FOOTER_INIT_HEIGHT - SCROLL_TOP_OFFSET);
         });
 
-        settingsScroll.widthProperty ().addListener((observableValue, number, t1) -> {
-            AnchorPane.setRightAnchor (settingsView, root.getWidth () );
-        });
+        settingsAnchorPane.setVisible ( false );
 
         //settingsScroll.setMouseTransparent ( true );
 
         //AnchorPane.setTopAnchor(helloBtn, /*homeScroll.getHeight()*/700 - FOOTER_INIT_HEIGHT);
     }
+
+    public void onHamburgerClick () { settingsAnchorPane.setVisible ( !settingsAnchorPane.isVisible () ); }
 
     public void onMouseEnteredFooter(){
         homeScroll.setMouseTransparent(false);
