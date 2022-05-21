@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-			xmlns:fx="http://javafx.com/fxml"
-			fx:controller="group.six.weather4genz.Hourly">
+<AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group.six.weather4genz.Hourly">
 
 
 	<children>
@@ -20,112 +22,259 @@
 			<content>
 				<AnchorPane>
 					<children>
-						<GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-							<columnConstraints>
-								<ColumnConstraints hgrow="SOMETIMES" prefWidth="80.0" />
-								<ColumnConstraints />
-								<ColumnConstraints />
-								<ColumnConstraints />
-								<ColumnConstraints />
-								<ColumnConstraints />
-								<ColumnConstraints />
-								<ColumnConstraints />
-								<ColumnConstraints />
-								<ColumnConstraints />
-								<ColumnConstraints />
-								<ColumnConstraints />
-							</columnConstraints>
-							<rowConstraints>
-								<RowConstraints prefHeight="80.0" vgrow="SOMETIMES" />
-								<RowConstraints prefHeight="40.0" vgrow="SOMETIMES" />
-							</rowConstraints>
-							<children>
-								<ImageView fx:id="forecast_0_icon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.valignment="TOP">
-									<image>
-										<Image url="@icons/placeholder.png" />
-									</image>
-								</ImageView>
-								<Label fx:id="forecast_0_text" text="1am" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+						<HBox AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" prefHeight="120">
+							<GridPane style="-fx-background-color: #03d9da; -fx-background-radius: 5;">
+								<columnConstraints>
+									<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+								</columnConstraints>
+								<rowConstraints>
+									<RowConstraints percentHeight="70" vgrow="SOMETIMES" />
+									<RowConstraints percentHeight="30" vgrow="SOMETIMES" />
+								</rowConstraints>
+								<children>
+									<ImageView fx:id="forecast_0_icon" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-0.7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+										<image>
+											<Image url="@icons/placeholder.png" />
+										</image>
+									</ImageView>
+									<Label fx:id="forecast_0_text" alignment="CENTER" text="TIME" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+								</children>
+								<HBox.margin>
+								   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+								</HBox.margin>
+							</GridPane>
 
-								<ImageView fx:id="forecast_1_icon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.valignment="TOP">
-									<image>
-										<Image url="@icons/placeholder.png" />
-									</image>
-								</ImageView>
-								<Label fx:id="forecast_1_text" text="2am" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+							<GridPane style="-fx-background-color: #03d9da; -fx-background-radius: 5;">
+								<columnConstraints>
+									<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+								</columnConstraints>
+								<rowConstraints>
+									<RowConstraints percentHeight="70" vgrow="SOMETIMES" />
+									<RowConstraints percentHeight="30" vgrow="SOMETIMES" />
+								</rowConstraints>
+								<children>
+									<ImageView fx:id="forecast_1_icon" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-0.7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+										<image>
+											<Image url="@icons/placeholder.png" />
+										</image>
+									</ImageView>
+									<Label fx:id="forecast_1_text" alignment="CENTER" text="TIME" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+								</children>
+								<HBox.margin>
+									<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+								</HBox.margin>
+							</GridPane>
 
-								<ImageView fx:id="forecast_2_icon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.valignment="TOP">
-									<image>
-										<Image url="@icons/placeholder.png" />
-									</image>
-								</ImageView>
-								<Label fx:id="forecast_2_text" text="3am" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+							<GridPane style="-fx-background-color: #03d9da; -fx-background-radius: 5;">
+								<columnConstraints>
+									<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+								</columnConstraints>
+								<rowConstraints>
+									<RowConstraints percentHeight="70" vgrow="SOMETIMES" />
+									<RowConstraints percentHeight="30" vgrow="SOMETIMES" />
+								</rowConstraints>
+								<children>
+									<ImageView fx:id="forecast_2_icon" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-0.7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+										<image>
+											<Image url="@icons/placeholder.png" />
+										</image>
+									</ImageView>
+									<Label fx:id="forecast_2_text" alignment="CENTER" text="TIME" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+								</children>
+								<HBox.margin>
+									<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+								</HBox.margin>
+							</GridPane>
+							
+							<GridPane style="-fx-background-color: #03d9da; -fx-background-radius: 5;">
+								<columnConstraints>
+									<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+								</columnConstraints>
+								<rowConstraints>
+									<RowConstraints percentHeight="70" vgrow="SOMETIMES" />
+									<RowConstraints percentHeight="30" vgrow="SOMETIMES" />
+								</rowConstraints>
+								<children>
+									<ImageView fx:id="forecast_3_icon" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-0.7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+										<image>
+											<Image url="@icons/placeholder.png" />
+										</image>
+									</ImageView>
+									<Label fx:id="forecast_3_text" alignment="CENTER" text="TIME" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+								</children>
+								<HBox.margin>
+									<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+								</HBox.margin>
+							</GridPane>
 
-								<ImageView fx:id="forecast_3_icon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.valignment="TOP">
-									<image>
-										<Image url="@icons/placeholder.png" />
-									</image>
-								</ImageView>
-								<Label fx:id="forecast_3_text" text="4am" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+							<GridPane style="-fx-background-color: #03d9da; -fx-background-radius: 5;">
+								<columnConstraints>
+									<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+								</columnConstraints>
+								<rowConstraints>
+									<RowConstraints percentHeight="70" vgrow="SOMETIMES" />
+									<RowConstraints percentHeight="30" vgrow="SOMETIMES" />
+								</rowConstraints>
+								<children>
+									<ImageView fx:id="forecast_4_icon" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-0.7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+										<image>
+											<Image url="@icons/placeholder.png" />
+										</image>
+									</ImageView>
+									<Label fx:id="forecast_4_text" alignment="CENTER" text="TIME" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+								</children>
+								<HBox.margin>
+									<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+								</HBox.margin>
+							</GridPane>
 
-								<ImageView fx:id="forecast_4_icon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.valignment="TOP">
-									<image>
-										<Image url="@icons/placeholder.png" />
-									</image>
-								</ImageView>
-								<Label fx:id="forecast_4_text" text="5am" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+							<GridPane style="-fx-background-color: #03d9da; -fx-background-radius: 5;">
+								<columnConstraints>
+									<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+								</columnConstraints>
+								<rowConstraints>
+									<RowConstraints percentHeight="70" vgrow="SOMETIMES" />
+									<RowConstraints percentHeight="30" vgrow="SOMETIMES" />
+								</rowConstraints>
+								<children>
+									<ImageView fx:id="forecast_5_icon" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-0.7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+										<image>
+											<Image url="@icons/placeholder.png" />
+										</image>
+									</ImageView>
+									<Label fx:id="forecast_5_text" alignment="CENTER" text="TIME" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+								</children>
+								<HBox.margin>
+									<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+								</HBox.margin>
+							</GridPane>
 
-								<ImageView fx:id="forecast_5_icon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.valignment="TOP">
-									<image>
-										<Image url="@icons/placeholder.png" />
-									</image>
-								</ImageView>
-								<Label fx:id="forecast_5_text" text="6am" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+							<GridPane style="-fx-background-color: #03d9da; -fx-background-radius: 5;">
+								<columnConstraints>
+									<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+								</columnConstraints>
+								<rowConstraints>
+									<RowConstraints percentHeight="70" vgrow="SOMETIMES" />
+									<RowConstraints percentHeight="30" vgrow="SOMETIMES" />
+								</rowConstraints>
+								<children>
+									<ImageView fx:id="forecast_6_icon" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-0.7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+										<image>
+											<Image url="@icons/placeholder.png" />
+										</image>
+									</ImageView>
+									<Label fx:id="forecast_6_text" alignment="CENTER" text="TIME" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+								</children>
+								<HBox.margin>
+									<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+								</HBox.margin>
+							</GridPane>
 
-								<ImageView fx:id="forecast_6_icon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.valignment="TOP">
-									<image>
-										<Image url="@icons/placeholder.png" />
-									</image>
-								</ImageView>
-								<Label fx:id="forecast_6_text" text="7am" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+							<GridPane style="-fx-background-color: #03d9da; -fx-background-radius: 5;">
+								<columnConstraints>
+									<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+								</columnConstraints>
+								<rowConstraints>
+									<RowConstraints percentHeight="70" vgrow="SOMETIMES" />
+									<RowConstraints percentHeight="30" vgrow="SOMETIMES" />
+								</rowConstraints>
+								<children>
+									<ImageView fx:id="forecast_7_icon" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-0.7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+										<image>
+											<Image url="@icons/placeholder.png" />
+										</image>
+									</ImageView>
+									<Label fx:id="forecast_7_text" alignment="CENTER" text="TIME" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+								</children>
+								<HBox.margin>
+									<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+								</HBox.margin>
+							</GridPane>
 
-								<ImageView fx:id="forecast_7_icon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.valignment="TOP">
-									<image>
-										<Image url="@icons/placeholder.png" />
-									</image>
-								</ImageView>
-								<Label fx:id="forecast_7_text" text="8am" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+							<GridPane style="-fx-background-color: #03d9da; -fx-background-radius: 5;">
+								<columnConstraints>
+									<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+								</columnConstraints>
+								<rowConstraints>
+									<RowConstraints percentHeight="70" vgrow="SOMETIMES" />
+									<RowConstraints percentHeight="30" vgrow="SOMETIMES" />
+								</rowConstraints>
+								<children>
+									<ImageView fx:id="forecast_8_icon" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-0.7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+										<image>
+											<Image url="@icons/placeholder.png" />
+										</image>
+									</ImageView>
+									<Label fx:id="forecast_8_text" alignment="CENTER" text="TIME" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+								</children>
+								<HBox.margin>
+									<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+								</HBox.margin>
+							</GridPane>
 
-								<ImageView fx:id="forecast_8_icon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.valignment="TOP">
-									<image>
-										<Image url="@icons/placeholder.png" />
-									</image>
-								</ImageView>
-								<Label fx:id="forecast_8_text" text="9am" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+							<GridPane style="-fx-background-color: #03d9da; -fx-background-radius: 5;">
+								<columnConstraints>
+									<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+								</columnConstraints>
+								<rowConstraints>
+									<RowConstraints percentHeight="70" vgrow="SOMETIMES" />
+									<RowConstraints percentHeight="30" vgrow="SOMETIMES" />
+								</rowConstraints>
+								<children>
+									<ImageView fx:id="forecast_9_icon" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-0.7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+										<image>
+											<Image url="@icons/placeholder.png" />
+										</image>
+									</ImageView>
+									<Label fx:id="forecast_9_text" alignment="CENTER" text="TIME" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+								</children>
+								<HBox.margin>
+									<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+								</HBox.margin>
+							</GridPane>
 
-								<ImageView fx:id="forecast_9_icon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.valignment="TOP">
-									<image>
-										<Image url="@icons/placeholder.png" />
-									</image>
-								</ImageView>
-								<Label fx:id="forecast_9_text" text="10am" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+							<GridPane style="-fx-background-color: #03d9da; -fx-background-radius: 5;">
+								<columnConstraints>
+									<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+								</columnConstraints>
+								<rowConstraints>
+									<RowConstraints percentHeight="70" vgrow="SOMETIMES" />
+									<RowConstraints percentHeight="30" vgrow="SOMETIMES" />
+								</rowConstraints>
+								<children>
+									<ImageView fx:id="forecast_10_icon" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-0.7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+										<image>
+											<Image url="@icons/placeholder.png" />
+										</image>
+									</ImageView>
+									<Label fx:id="forecast_10_text" alignment="CENTER" text="TIME" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+								</children>
+								<HBox.margin>
+									<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+								</HBox.margin>
+							</GridPane>
 
-								<ImageView fx:id="forecast_10_icon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.valignment="TOP">
-									<image>
-										<Image url="@icons/placeholder.png" />
-									</image>
-								</ImageView>
-								<Label fx:id="forecast_10_text" text="11am" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-
-								<ImageView fx:id="forecast_11_icon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="11" GridPane.valignment="TOP">
-									<image>
-										<Image url="@icons/placeholder.png" />
-									</image>
-								</ImageView>
-								<Label fx:id="forecast_11_text" text="12pm" GridPane.columnIndex="11" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-
-							</children>
-						</GridPane>
+							<GridPane style="-fx-background-color: #03d9da; -fx-background-radius: 5;">
+								<columnConstraints>
+									<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+								</columnConstraints>
+								<rowConstraints>
+									<RowConstraints percentHeight="70" vgrow="SOMETIMES" />
+									<RowConstraints percentHeight="30" vgrow="SOMETIMES" />
+								</rowConstraints>
+								<children>
+									<ImageView fx:id="forecast_11_icon" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-0.7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+										<image>
+											<Image url="@icons/placeholder.png" />
+										</image>
+									</ImageView>
+									<Label fx:id="forecast_11_text" alignment="CENTER" text="TIME" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+								</children>
+								<HBox.margin>
+									<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+								</HBox.margin>
+							</GridPane>
+						</HBox>
 					</children>
 				</AnchorPane>
 			</content>
